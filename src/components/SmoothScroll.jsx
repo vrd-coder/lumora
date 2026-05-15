@@ -11,10 +11,12 @@ export default function SmoothScroll({ children }) {
   useEffect(() => {
 
     const instance = new Lenis({
-      duration: 1.2,
-      smoothWheel: true,
-      smoothTouch: false,
-    });
+  lerp: 0.08,
+  smoothWheel: true,
+  smoothTouch: false,
+  syncTouch: false,
+  wheelMultiplier: 1
+});
 
     setLenis(instance);
 

@@ -19,7 +19,9 @@ import {
   TimerReset,
   Monitor,
   Keyboard,
-  BarChart3
+  BarChart3,
+  Menu,
+  X
 } from "lucide-react";
 
 import { FaWindows } from "react-icons/fa";
@@ -197,6 +199,7 @@ export default function Home() {
   const [isMobile, setIsMobile] = useState(true);
   const [scrollProgress, setScrollProgress] = useState(0);
   const [previewOpen, setPreviewOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const mouseXGlow = useMotionValue(0);
   const mouseYGlow = useMotionValue(0);
@@ -365,39 +368,90 @@ export default function Home() {
               }}
             />
 
-            {!isMobile && (
-              <div
-                style={{
-                  position: "absolute",
-                  right: "24px",
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "48px"
-                }}
-              >
-                {[
-                  { label: "Features", href: "#features" },
-                  { label: "Experience", href: "#pc-preview-video" },
-                  { label: "Download", href: "#download" }
-                ].map((item) => (
-                  <a
-                    key={item.label}
-                    href={item.href}
-                    style={{
-                      color: "#a1a1aa",
-                      textDecoration: "none",
-                      fontSize: "16px"
-                    }}
-                  >
-                    {item.label}
-                  </a>
-                ))}
-              </div>
-            )}
+            {!isMobile ? (
+  <div
+    style={{
+      position: "absolute",
+      right: "24px",
+      display: "flex",
+      alignItems: "center",
+      gap: "48px"
+    }}
+  >
+    {[
+      { label: "Features", href: "#features" },
+      { label: "Experience", href: "#pc-preview-video" },
+      { label: "Download", href: "#download" }
+    ].map((item) => (
+      <a
+        key={item.label}
+        href={item.href}
+        style={{
+          color: "#a1a1aa",
+          textDecoration: "none",
+          fontSize: "16px"
+        }}
+      >
+        {item.label}
+      </a>
+    ))}
+  </div>
+) : (
+  <motion.button
+  whileTap={{ scale: 0.92 }}
+  animate={{ rotate: menuOpen ? 90 : 0 }}
+  transition={{ duration: 0.25 }}
+  onClick={() => setMenuOpen(!menuOpen)}
+  className="flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.05] backdrop-blur-2xl shadow-[0_0_25px_rgba(34,211,238,0.12)]"
+>
+  {menuOpen ? (
+    <X size={24} className="text-cyan-300" />
+  ) : (
+    <Menu size={24} className="text-white" />
+  )}
+</motion.button>
+    )}
+    
+  </div>
 
-          </div>
+</nav>
+        {isMobile && menuOpen && (
+  <motion.div
+  initial={{ opacity: 0, y: -15 }}
+  animate={{ opacity: 1, y: 0 }}
+  exit={{ opacity: 0, y: -15 }}
+  transition={{ duration: 0.25 }}
+  className="fixed top-[92px] left-4 right-4 z-[99998] overflow-hidden rounded-[28px] border border-white/10 bg-black/80 backdrop-blur-2xl shadow-[0_0_40px_rgba(34,211,238,0.08)]"
+>
+    <div className="flex flex-col px-6 py-6">
 
-        </nav>
+      <a
+        href="#features"
+        onClick={() => setMenuOpen(false)}
+        className="py-4 text-zinc-300 text-lg border-b border-white/5"
+      >
+        Features
+      </a>
+
+      <a
+        href="#mobile-preview-video"
+        onClick={() => setMenuOpen(false)}
+        className="py-4 text-zinc-300 text-lg border-b border-white/5"
+      >
+        Experience
+      </a>
+
+      <a
+        href="#download"
+        onClick={() => setMenuOpen(false)}
+        className="py-4 text-cyan-400 text-lg"
+      >
+        Download
+      </a>
+
+    </div>
+  </motion.div>
+)}
 
         {/* HERO SECTION */}
         <section
@@ -979,10 +1033,11 @@ export default function Home() {
   <FaWindows size={20} />
   Download For Windows
 </motion.a>
-<p className="mt-4 max-w-xl mx-auto text-xs sm:text-sm leading-relaxed text-zinc-500">
+<p className="mt-5 max-w-md mx-auto text-sm leading-7 text-zinc-300">
   Windows may show a security prompt because Lumora is a new application.
-  Click <span className="text-zinc-300 font-medium">“More info”</span> →{" "}
-  <span className="text-zinc-300 font-medium">“Run anyway”</span>.
+  <br />
+  Click <span className="font-semibold text-cyan-300">“More info”</span> →{" "}
+  <span className="font-semibold text-cyan-300">“Run anyway”</span>.
 </p>
                 <div className="mt-12 flex flex-col items-center justify-center gap-3 text-zinc-500 text-sm">
                   <span>© 2026 Lumora. All rights reserved.</span>
