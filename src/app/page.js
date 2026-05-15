@@ -979,7 +979,11 @@ export default function Home() {
   <FaWindows size={20} />
   Download For Windows
 </motion.a>
-
+<p className="mt-4 max-w-xl mx-auto text-xs sm:text-sm leading-relaxed text-zinc-500">
+  Windows may show a security prompt because Lumora is a new application.
+  Click <span className="text-zinc-300 font-medium">“More info”</span> →{" "}
+  <span className="text-zinc-300 font-medium">“Run anyway”</span>.
+</p>
                 <div className="mt-12 flex flex-col items-center justify-center gap-3 text-zinc-500 text-sm">
                   <span>© 2026 Lumora. All rights reserved.</span>
                   <span>
