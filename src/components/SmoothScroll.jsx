@@ -11,27 +11,29 @@ export default function SmoothScroll({ children }) {
   useEffect(() => {
 
     const instance = new Lenis({
-  lerp: 0.08,
+  duration: 0.55,
   smoothWheel: true,
   smoothTouch: false,
-  syncTouch: false,
-  wheelMultiplier: 1
+  wheelMultiplier: 1,
+  lerp: 0.12,
 });
 
     setLenis(instance);
 
-    function raf(time) {
-      instance.raf(time);
-      requestAnimationFrame(raf);
-    }
+    let rafId;
 
-    requestAnimationFrame(raf);
+function raf(time) {
+  instance.raf(time);
+  rafId = requestAnimationFrame(raf);
+}
 
-    return () => {
-      instance.destroy();
-      setLenis(null);
-    };
+rafId = requestAnimationFrame(raf);
 
+   return () => {
+  cancelAnimationFrame(rafId);
+  instance.destroy();
+  setLenis(null);
+};
   }, []);
 
   return (
