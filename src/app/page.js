@@ -902,7 +902,7 @@ export default function Home() {
                   name: "Sneha Kulkarni",
                   role: "Medical Student, Pune",
                   avatar: "SK",
-                  text: " Fullscreen Nothern Lights + Pomodoro = perfect study setup. Nothing else comes close to this experience.",
+                  text: "Fullscreen Northern Lights + Pomodoro = perfect study setup. Nothing else comes close to this experience.",
                   stars: 4
                 },
                 {
