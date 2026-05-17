@@ -878,44 +878,44 @@ export default function Home() {
             >
               {[
                 {
-                  name: "Aryan Mehta",
-                  role: "Engineering Student, IIT Delhi",
-                  avatar: "AM",
+                  name: "Vaishnavi Pratap",
+                  role: "Law Student, NLSIU Bengaluru",
+                  avatar: "VP",
                   text: "Lumora completely changed how I study. The ambient sounds and fullscreen mode help me stay locked in for hours without getting distracted.",
-                  stars: 4
+                  stars: 5
                 },
                 {
-                  name: "Priya Sharma",
-                  role: "CA Aspirant, Mumbai",
-                  avatar: "PS",
+                  name: "Sayan Mondal",
+                  role: "CA Aspirant, Kolkata",
+                  avatar: "SM",
                   text: "I used to struggle with 2 hour study sessions. With Lumora's Pomodoro timer and focus mode, I'm easily hitting 6+ hours daily. Game changer.",
                   stars: 5
                 },
                 {
-                  name: "Rohan Verma",
-                  role: "UPSC Prep, Delhi",
-                  avatar: "RV",
+                  name: "Vaniksha Saklecha",
+                  role: "CA Aspirant, Chennai",
+                  avatar: "VS",
                   text: "The cinematic UI actually makes studying feel premium. I open Lumora and my brain just switches to focus mode automatically now.",
                   stars: 5
                 },
                 {
-                  name: "Sneha Kulkarni",
-                  role: "Medical Student, Pune",
-                  avatar: "SK",
+                  name: "Drishtee Sharma",
+                  role: "Medical Student, Assam",
+                  avatar: "DS",
                   text: "Fullscreen Northern Lights + Pomodoro = perfect study setup. Nothing else comes close to this experience.",
-                  stars: 4
-                },
-                {
-                  name: "Dev Patel",
-                  role: "Software Dev, Bangalore",
-                  avatar: "DP",
-                  text: "Even as a developer I use this for deep work sessions. The progress tracking keeps me accountable. Highly recommend.",
                   stars: 5
                 },
                 {
-                  name: "Ananya Singh",
-                  role: "Design Student, Ahmedabad",
-                  avatar: "AS",
+                  name: "Sayantani Chakraborty",
+                  role: "Professor, Assam",
+                  avatar: "SC",
+                  text: "Even as a Professor I use this for deep work sessions. The progress tracking keeps me accountable. Highly recommend.",
+                  stars: 5
+                },
+                {
+                  name: "Raj Mishra",
+                  role: "Software Dev, Pune",
+                  avatar: "RM",
                   text: "The UI is so beautiful it's actually motivating. I look forward to opening Lumora every morning. Absolutely love it.",
                   stars: 5
                 }
