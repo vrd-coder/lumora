@@ -893,7 +893,7 @@ export default function Home() {
                 },
                 {
                   name: "Vaniksha Saklecha",
-                  role: "CA Aspirant, Chennai",
+                  role: "CA, Chennai",
                   avatar: "VS",
                   text: "The cinematic UI actually makes studying feel premium. I open Lumora and my brain just switches to focus mode automatically now.",
                   stars: 5
